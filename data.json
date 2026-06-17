@@ -33,7 +33,7 @@
       "campaign": "100& FTD",
       "bonus_tcs": "YES",
       "gridsight": "NO",
-      "jira_ticket": "",
+      "jira_ticket": "https://zenfinex.atlassian.net/browse/DTS-19981",
       "withdrawals_blocked": "YES",
       "crm_note": "YES",
       "close_only": "YES",
