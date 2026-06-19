@@ -248,7 +248,7 @@
       "amount_to_deduct": "91832",
       "email_sent": "YES",
       "adjusted": "YES",
-      "funding_release": "",
+      "funding_release": "YES",
       "account_closed": "YES"
     }
   ]
