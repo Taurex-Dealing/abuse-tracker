@@ -9,7 +9,7 @@
       "ib": "CU23748",
       "account_manager": "Janey Liu",
       "country": "China",
-      "jira_ticket": "",
+      "jira_ticket": "https://zenfinex.atlassian.net/browse/DTS-20073",
       "withdrawals_blocked": "YES",
       "crm_note": "YES",
       "close_only": "YES",
