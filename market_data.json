@@ -16,7 +16,7 @@
       "amount_to_deduct": "1213.20",
       "email_sent": "YES",
       "adjusted": "YES",
-      "funding_release": "",
+      "funding_release": "YES",
       "account_closed": "YES",
       "jira_pushed": "YES"
     },
