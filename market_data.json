@@ -93,7 +93,8 @@
       "email_sent": "",
       "adjusted": "",
       "funding_release": "",
-      "account_closed": ""
+      "account_closed": "",
+      "jira_pushed": "YES"
     },
     {
       "id": "1784047575923",
