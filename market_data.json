@@ -48,7 +48,7 @@
       "account_manager": "norhafizi bin mohd rafek",
       "country": "Malaysia",
       "jira_ticket": "",
-      "withdrawals_blocked": "YES",
+      "withdrawals_blocked": "NO",
       "crm_note": "YES",
       "close_only": "YES",
       "amount_to_deduct": "0",
