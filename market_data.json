@@ -115,7 +115,7 @@
       "close_only": "YES",
       "amount_to_deduct": "0",
       "email_sent": "",
-      "adjusted": "",
+      "adjusted": "NO",
       "funding_release": "",
       "account_closed": "",
       "jira_pushed": "YES"
