@@ -36,7 +36,8 @@
       "email_sent": "",
       "adjusted": "",
       "funding_release": "",
-      "account_closed": ""
+      "account_closed": "",
+      "jira_pushed": "YES"
     },
     {
       "id": "1784048823141",
@@ -55,7 +56,8 @@
       "email_sent": "",
       "adjusted": "",
       "funding_release": "",
-      "account_closed": ""
+      "account_closed": "",
+      "jira_pushed": "YES"
     },
     {
       "id": "1784048483443",
