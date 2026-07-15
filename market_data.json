@@ -174,7 +174,7 @@
       "crm_note": "YES",
       "close_only": "YES",
       "amount_to_deduct": "0",
-      "email_sent": "",
+      "email_sent": "YES",
       "adjusted": "NO",
       "funding_release": "",
       "account_closed": "",
