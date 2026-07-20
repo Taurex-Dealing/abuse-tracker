@@ -175,7 +175,7 @@
       "amount_to_deduct": "0",
       "email_sent": "YES",
       "adjusted": "NO",
-      "funding_release": "",
+      "funding_release": "YES",
       "account_closed": "",
       "jira_pushed": "YES"
     },
