@@ -20,26 +20,6 @@
       "account_closed": ""
     },
     {
-      "id": "1784099341732",
-      "date": "2026-07-15",
-      "cu_number": "CU162109",
-      "login": "2110000800",
-      "name": "FANG YU MA",
-      "ib": "CU161529",
-      "account_manager": "Wayne W",
-      "country": "China",
-      "jira_ticket": "",
-      "withdrawals_blocked": "YES",
-      "crm_note": "YES",
-      "close_only": "YES",
-      "amount_to_deduct": "14443.66",
-      "email_sent": "",
-      "adjusted": "",
-      "funding_release": "",
-      "account_closed": "",
-      "jira_pushed": "YES"
-    },
-    {
       "id": "1784049356307",
       "date": "2026-07-14",
       "cu_number": "CU164174",
