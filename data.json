@@ -19,7 +19,8 @@
       "adjusted": "YES",
       "funding_release": "YES",
       "account_closed": "YES",
-      "bonus_tcs": ""
+      "bonus_tcs": "",
+      "jira_pushed": "YES"
     },
     {
       "id": "1780579133334",
