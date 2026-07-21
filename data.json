@@ -39,7 +39,7 @@
       "credit_removed": "YES",
       "adjusted": "NO",
       "funding_release": "NO",
-      "account_closed": "",
+      "account_closed": "NO",
       "jira_pushed": "YES"
     },
     {
