@@ -37,7 +37,7 @@
       "amount_to_deduct": "3570.99",
       "email_sent": "NO",
       "credit_removed": "YES",
-      "adjusted": "",
+      "adjusted": "NO",
       "funding_release": "",
       "account_closed": "",
       "jira_pushed": "YES"
