@@ -30,7 +30,7 @@
       "ib": "N/A",
       "account_manager": "Muhammad Iqbal",
       "country": "Pakistan",
-      "jira_ticket": "",
+      "jira_ticket": "https://zenfinex.atlassian.net/browse/DTS-20488",
       "withdrawals_blocked": "YES",
       "crm_note": "YES",
       "close_only": "YES",
