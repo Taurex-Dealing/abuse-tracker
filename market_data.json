@@ -136,7 +136,7 @@
       "email_sent": "YES",
       "adjusted": "NO",
       "funding_release": "YES",
-      "account_closed": "",
+      "account_closed": "YES",
       "jira_pushed": "YES"
     },
     {
