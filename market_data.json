@@ -69,7 +69,7 @@
       "ib": "n/a",
       "account_manager": "n/a",
       "country": "China",
-      "jira_ticket": "",
+      "jira_ticket": "https://zenfinex.atlassian.net/browse/DTS-20554",
       "withdrawals_blocked": "NO",
       "crm_note": "YES",
       "close_only": "YES",
