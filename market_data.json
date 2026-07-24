@@ -129,7 +129,7 @@
       "ib": "n/a",
       "account_manager": "Nora Ramli",
       "country": "Indonesia",
-      "jira_ticket": "",
+      "jira_ticket": "https://zenfinex.atlassian.net/browse/DTS-20550",
       "withdrawals_blocked": "NO",
       "crm_note": "YES",
       "close_only": "YES",
