@@ -89,7 +89,7 @@
       "ib": "CU161870",
       "account_manager": "Wayne W",
       "country": "China",
-      "jira_ticket": "",
+      "jira_ticket": "https://zenfinex.atlassian.net/browse/DTS-20556",
       "withdrawals_blocked": "NO",
       "crm_note": "YES",
       "close_only": "YES",
