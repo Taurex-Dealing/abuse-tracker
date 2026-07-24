@@ -11,7 +11,7 @@
       "country": "Iraq",
       "jira_ticket": "https://zenfinex.atlassian.net/browse/DTS-20549",
       "withdrawals_blocked": "NO",
-      "crm_note": "",
+      "crm_note": "YES",
       "close_only": "YES",
       "amount_to_deduct": "0",
       "email_sent": "",
