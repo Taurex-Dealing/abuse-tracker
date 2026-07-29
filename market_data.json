@@ -30,7 +30,7 @@
       "account_manager": "n/a",
       "country": "Pakistan",
       "jira_ticket": "https://zenfinex.atlassian.net/browse/DTS-20607",
-      "withdrawals_blocked": "",
+      "withdrawals_blocked": "YES",
       "crm_note": "",
       "close_only": "YES",
       "amount_to_deduct": "1506.86",
