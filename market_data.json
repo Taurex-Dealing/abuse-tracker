@@ -50,7 +50,7 @@
       "country": "Vietnam",
       "jira_ticket": "",
       "withdrawals_blocked": "YES",
-      "crm_note": "",
+      "crm_note": "YES",
       "close_only": "YES",
       "amount_to_deduct": "5070.45",
       "email_sent": "",
