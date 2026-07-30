@@ -9,7 +9,7 @@
       "ib": "CU85108",
       "account_manager": "Van Tran",
       "country": "Vietnam",
-      "jira_ticket": "",
+      "jira_ticket": "https://zenfinex.atlassian.net/browse/DTS-20655",
       "withdrawals_blocked": "YES",
       "crm_note": "YES",
       "close_only": "YES",
