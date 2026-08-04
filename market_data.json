@@ -36,7 +36,7 @@
       "amount_to_deduct": "1230.38",
       "email_sent": "YES",
       "adjusted": "YES",
-      "funding_release": "YES",
+      "funding_release": "",
       "account_closed": "",
       "jira_pushed": "YES"
     },
