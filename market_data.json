@@ -10,7 +10,7 @@
       "account_manager": "Trang Nguyen",
       "country": "Vietnam",
       "jira_ticket": "",
-      "withdrawals_blocked": "",
+      "withdrawals_blocked": "NO",
       "crm_note": "",
       "close_only": "",
       "amount_to_deduct": "",
