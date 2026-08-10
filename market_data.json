@@ -11,7 +11,7 @@
       "country": "Egypt",
       "jira_ticket": "",
       "withdrawals_blocked": "",
-      "crm_note": "",
+      "crm_note": "YES",
       "close_only": "YES",
       "amount_to_deduct": "",
       "email_sent": "",
