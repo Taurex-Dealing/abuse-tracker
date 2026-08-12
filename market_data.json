@@ -9,7 +9,7 @@
       "ib": "CU155857",
       "account_manager": "Bob Zhang",
       "country": "China",
-      "jira_ticket": "",
+      "jira_ticket": "https://zenfinex.atlassian.net/browse/DTS-20856",
       "withdrawals_blocked": "YES",
       "crm_note": "YES",
       "close_only": "YES",
