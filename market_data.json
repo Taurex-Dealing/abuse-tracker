@@ -49,7 +49,7 @@
       "ib": "",
       "account_manager": "",
       "country": "China",
-      "jira_ticket": "",
+      "jira_ticket": "https://zenfinex.atlassian.net/jira/servicedesk/projects/DTS/queues/custom/66/DTS-20925",
       "withdrawals_blocked": "YES",
       "crm_note": "YES",
       "close_only": "YES",
