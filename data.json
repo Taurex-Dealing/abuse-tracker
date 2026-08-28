@@ -9,7 +9,7 @@
       "ib": "CU130857",
       "account_manager": "Muhammad Iqbal",
       "country": "UAE",
-      "jira_ticket": "",
+      "jira_ticket": "https://zenfinex.atlassian.net/browse/DTS-21075",
       "withdrawals_blocked": "YES",
       "crm_note": "YES",
       "close_only": "YES",
