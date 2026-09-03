@@ -31,7 +31,7 @@
       "jira_ticket": "",
       "withdrawals_blocked": "NO",
       "crm_note": "YES",
-      "close_only": "NO",
+      "close_only": "YES",
       "amount_to_deduct": "",
       "email_sent": "",
       "adjusted": "",
