@@ -117,7 +117,7 @@
       "email_sent": "YES",
       "adjusted": "YES",
       "funding_release": "",
-      "account_closed": "YES",
+      "account_closed": "",
       "jira_pushed": "YES"
     },
     {
