@@ -29,7 +29,7 @@
       "ib": "CU129933",
       "account_manager": "Kinden Huang",
       "country": "China",
-      "jira_ticket": "",
+      "jira_ticket": "https://zenfinex.atlassian.net/jira/servicedesk/projects/DTS/queues/custom/66/DTS-21164",
       "withdrawals_blocked": "NO",
       "crm_note": "YES",
       "close_only": "YES",
