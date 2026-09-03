@@ -1,6 +1,25 @@
 {
   "cases": [
     {
+      "id": "1786341207841",
+      "date": "2026-08-10",
+      "cu_number": "CU120251",
+      "login": "120035014",
+      "name": "ALI MOHAMED SHALABY EL SHERBINY",
+      "ib": "",
+      "account_manager": "Najla Murad",
+      "country": "Egypt",
+      "jira_ticket": "",
+      "withdrawals_blocked": "YES",
+      "crm_note": "YES",
+      "close_only": "YES",
+      "amount_to_deduct": "",
+      "email_sent": "",
+      "adjusted": "",
+      "funding_release": "",
+      "account_closed": ""
+    },
+    {
       "id": "1788431130634",
       "date": "2026-09-03",
       "cu_number": "CU165901",
@@ -19,25 +38,6 @@
       "funding_release": "",
       "account_closed": "",
       "jira_pushed": "YES"
-    },
-    {
-      "id": "1786341207841",
-      "date": "2026-08-10",
-      "cu_number": "CU120251",
-      "login": "120035014",
-      "name": "ALI MOHAMED SHALABY EL SHERBINY",
-      "ib": "",
-      "account_manager": "Najla Murad",
-      "country": "Egypt",
-      "jira_ticket": "",
-      "withdrawals_blocked": "YES",
-      "crm_note": "YES",
-      "close_only": "YES",
-      "amount_to_deduct": "",
-      "email_sent": "",
-      "adjusted": "",
-      "funding_release": "",
-      "account_closed": ""
     },
     {
       "id": "1788430427091",
