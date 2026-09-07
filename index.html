@@ -565,7 +565,7 @@ td select { cursor: pointer; appearance: auto; }
 <div class="pat-modal" id="emailModal">
   <div class="pat-modal-content email-modal-content">
     <h3 id="emailModalTitle">Bonus Abuse — Standard Email Template</h3>
-    <p id="emailModalSub">Use this template for any bonus abuse case unless told otherwise. Fill in <code>[NAME]</code> and <code>[INSERT AMOUNT]</code> below, then Copy or Download.</p>
+    <p id="emailModalSub">Use this template for any bonus abuse case unless told otherwise. Fill in <code>[CLIENT NAME]</code>, <code>[ACCOUNT NUMBER]</code> and <code>[INSERT CURRENCY AND AMOUNT]</code> below, then Copy or Download.</p>
     <textarea id="emailTemplate" spellcheck="false"></textarea>
     <div class="pat-modal-actions">
       <button class="btn btn-outline" onclick="resetEmailTemplate()">Reset</button>
@@ -1175,69 +1175,97 @@ function exportCSV() {
   a.click();
 }
 
-var EMAIL_TEMPLATE = `Dear [NAME],
-
-We are writing to you from Taurex Global Limited (the "Company") in relation to trading activity in your account with the Company.
-
-Following a comprehensive review conducted by our dealing and risk teams, the Company has determined that your trading activity exhibited patterns consistent with market abuse and prohibited trading practices. Such conduct is expressly prohibited under the Company's Terms and Conditions and its Bonus Program Terms, and is inconsistent with genuine market participation.
-
-In this particular instance, our team has flagged concentrated flow which falls under the definition of illustrative 'Breach Behaviour' in accordance with the terms of the Bonus Program (clause G.2: Breach Behaviours), namely either 'operating single or multiple accounts (including The Company's accounts or between different brokers) for arbitrage' and/or 'trading products that are too concentrated and pose a high risk condition, or where more than 70% of the account's net exposure is concentrated on specific products or maintains a fixed trading direction'.
-
-Moreover or in the absence of such bonus program language specified above, the Company may determine that an Event of Default (as defined in the Company's Terms and Conditions at clause 3) has occurred if either the Company suspects the client has carried out trading which it deems, amongst other things, 'lacks legitimate intent, or is conducted in bad faith' (clause 15(m) of the Company's Terms and Conditions) or for 'any other circumstance where the Company reasonably believes that it is necessary or desirable to take action in accordance with this Clause 15 to protect the Company's best interests and/or the interests of any or all of its clients' (clause 15(n) of the Company's Terms and Conditions).
-
-Pursuant to clause 30 of the Company's Terms and Conditions, and further to the non-exhaustive list of market abuse and/or prohibited trading practices contained therein, the Company also:
-…reserves the right to take appropriate action, including but not limited to Account suspension, termination, correcting, recovering, and/or applying costs to any amounts generated from any form of market abuse, termination of any promotions, and legal proceedings, against any Client found to be engaging in market abuse activities/prohibited trading practices. Upon determining that abuse or prohibited trading practices have or likely to have occurred, we may retroactively claw back profits and deduct investigation costs (up to USD 5,000) from your Account without prior notice. You agree to repay any additional costs within 7 days. You further agree that the Company may deduct the claw back amounts from the balance in your account(s).
-
-The terms of the Company's Bonus Program together with its Terms and Conditions, permit the Company to take action in the event of actual or suspected breach behaviours/ prohibited trading practices. As set out above at clause 30 of the Terms and Conditions, or clause 15.2 of the Terms and Conditions (remedies on an Event of Default), or clauses 23.2 and 23.4 of the Terms and Conditions (rights of set-off), or clauses G.1-3 of the Company's Bonus Program (as applicable), the Company may, amongst other things, deduct any improper profits from your account or suspend/terminate your account with the Company.
-
-On this basis, the Company may immediately and without prior notice, where it reasonably suspects prohibited trading practices and/or Breach Behaviours, take the following action which this communication serves as notice of:
-deducting any improper profits from your account (deriving from the Breach Behaviours/prohibited trading practices described above) which are calculated as [INSERT AMOUNT]; and
-terminating your account with the Company.
-
-These actions are taken with immediate effect. Any funds remaining in your account after the deduction applied above shall be returned to the original funding source in line with our Payments Policy and the "Return to Source" principle. Should additional information be required to process the return, our team will contact you separately.`;
-
-// Market Abuse tab — mandated "Notice of Account Action" letter (loaded 2026-06-08
-// from "Notice of Account Action - 5Jun26 - CLEAN"). Placeholders: [CLIENT NAME],
-// [ACCOUNT NUMBER], [INSERT AMOUNT], [NAME]; pick one option in the [ ... ] action line.
-var MARKET_EMAIL_TEMPLATE = `Subject: Notice of Account Action – Prohibited Trading Practices and Profit Retention
+// Bonus Abuse tab — mandated "Notice of Account Action – Bonus Abuse and Prohibited
+// Trading Practices" letter (updated 2026-09-07). Placeholders: [CLIENT NAME],
+// [ACCOUNT NUMBER], [INSERT CURRENCY AND AMOUNT].
+var EMAIL_TEMPLATE = `Subject: Notice of Account Action – Bonus Abuse and Prohibited Trading Practices
 
 Dear [CLIENT NAME],
-Account no: [ACCOUNT NUMBER]
 
-We are writing to you from Taurex Global Limited, the "Company", in relation to trading activity on your account.
+Account number: [ACCOUNT NUMBER]
 
-Following a review conducted by our Risk, Dealing and Compliance teams, the Company has identified trading activity that it considers to be inconsistent with normal market participation and to fall within the scope of prohibited trading practices under the Company's Terms and Conditions.
+We are writing on behalf of Taurex Global Limited (the “Company”) regarding trading activity on your account in connection with the Bonus availed.
 
-The activity identified includes trading patterns, execution characteristics, order behaviour, market timing, post-execution price movements, use of automated trading systems and/or profit outcomes which the Company considers to be inconsistent with genuine market participation. The Company's decision is not based on any single factor in isolation, but on the overall pattern of activity identified on the account.
+Following a recent thorough review of your account by our internal teams, the Company has identified trading activity that it considers inconsistent with genuine market participation and falling within one or more categories of market abuse, bonus abuse and/or prohibited trading practices under the Company’s Terms and Conditions (the “Terms”).
 
-The Company considers that the trading activity falls within the scope of the following clauses of its Terms and Conditions:
+These practices may include, without limitation:
+The use of shared IP addresses, linked accounts or coordinated algorithms;
+Market manipulation or coordinated trading activity;
+Operating single or multiple accounts for arbitrage or bonus abuse;
+Malicious hedging, high-frequency trading or placing multiple accounts under a single exposure;
+High risk trading activity where more than 70% of the account’s net exposure is concentrated in specific products or consistently maintains the same trading direction;
+Other conduct intended to obtain bonus benefits or trading profits through abusive or prohibited practices.
 
-Clause 15.1(m), including trading which is deemed excessive, lacks legitimate intent, is conducted in bad faith, seeks to profit from minimal or no risk, exploits price latency, arbitrage opportunities or inefficient pricing mechanisms, or is conducted during abnormal, volatile or illiquid market conditions.
+The Company’s determination is based on the overall trading and execution patterns identified on the account and is not necessarily based on any single factor in isolation.
 
-Clause 15.1(n), including where the Company reasonably believes that action is necessary or desirable to protect the Company's best interests and/or the interests of any or all of its clients.
+In particular, Clause 30.1(i) addresses prohibited practices undertaken in connection with a Bonus Program or otherwise as determined by the Company. These include multiple accounts placing trades from the same IP address, operating single or multiple accounts for arbitrage, high-frequency trading, malicious hedging, trading oversized positions, placing accounts under a single exposure through multiple similar trades, and maintaining excessively concentrated exposure or a fixed trading direction.
 
-Clause 22.9 of the Terms and Conditions in relation to latency arbitrage, price-feed errors, internet connectivity delays and prices displayed on the trading platform or liquidity connection not accurately reflecting market rates. The Company does not permit trading activity that takes advantage of such conditions and reserves the right to revoke, correct or adjust affected transactions.
+The Company further considers that the activity falls within one or more of the following provisions:
+Clauses 22.8 and 22.9, concerning erroneous or non-market representative quotes, execution or system errors, latency arbitrage and price-feed inaccuracies;
+Clause 29.3(f), where a VPN, VPS, proxy or other technology is used for the abusive purposes specified in that clause; and
+Clauses 30.1(a), 30.1(f), 30.1(g), 30.1(h) and 30.1(i), concerning scalping, arbitrage, misuse of Expert Advisors or automated trading systems, liquidity exploitation and bonus-related or coordinated trading practices.
 
-Clause 29.2(f), including circumstances where the Company reasonably suspects or determines that a Client has used, is using, or has attempted to use any VPN, VPS, proxy, device, software or technology to conceal, obscure or falsify their identity, location or IP address, including to operate multiple accounts under different names using the same VPS IP or setup, abuse promotions, or carry out prohibited trading practices.
+Under Clause 30.2, the Company may take appropriate action where market abuse or prohibited trading practices have occurred or are likely to have occurred. This may include account suspension or termination, termination of promotions, transaction or account corrections, deductions, set-off, recovery or clawback of profits and the application of reasonable investigation costs.
 
-Clause 30.1(g), which prohibits the use of Expert Advisors, or EAs, to exploit platform vulnerabilities.
+The Company also relies, as applicable, on Clause 15.2 concerning remedies following an Event of Default, Clauses 23.2 and 23.4 concerning set-off, and Clauses 29.3(c) and 29.3(d) concerning immediate account suspension, restriction or termination.
 
-The Company relies on its rights under Clauses 15.2 and 30.2, respectively, in relation to the activities enumerated above and the consequences deriving therefrom, including: (i) its right to block an account, terminate the Agreement, refuse withdrawals and take any actions deemed necessary where an Event of Default has occurred or where the Company considers the account to be involved in suspicious activity, and (ii) the right to take appropriate action where market abuse or prohibited trading practices have occurred or are likely to have occurred, including but not limited to account suspension, termination, correction, recovery, clawback of profits, deduction of investigation costs and/or legal proceedings.
+Accordingly, this communication serves as notice that the Company has taken the following action with immediate effect:
+Deducted profits generated from the bonus abuse and/or prohibited trading practices identified on your account, calculated as [INSERT CURRENCY AND AMOUNT];
+Terminated your participation in the Bonus Program and terminated your account and the Agreement.
 
-Accordingly, the Company has taken the following action, which this communication serves as notice of:
+Any remaining eligible balance shall be handled in accordance with the Terms and the Company’s Payments Policy, including applicable return-to-source requirements. If additional information is required to process any return of funds, our team will contact you separately.
 
-retaining and/or deducting improper profits from your account deriving from the prohibited trading practices described above, calculated as [INSERT AMOUNT]; and
+The Company reserves all rights under the Terms, the applicable Bonus Program terms and applicable law.
 
-[terminating your account with the Company / continuing to restrict your account / cancelling any pending withdrawal request / returning any remaining eligible balance to the original funding source].
+Yours Sincerely,
+The Taurex Team`;
 
-These actions are taken with immediate effect.
+// Market Abuse tab — mandated "Notice of Account Action – Prohibited Trading Practices
+// and Profit Deduction" letter (updated 2026-09-07). Placeholders: [CLIENT NAME],
+// [ACCOUNT NUMBER], [INSERT CURRENCY AND AMOUNT].
+var MARKET_EMAIL_TEMPLATE = `Subject: Notice of Account Action – Prohibited Trading Practices and Profit Deduction
 
-Any funds remaining in your account after the deduction or retention applied above shall be handled in accordance with the Company's Terms and Conditions, Payments Policy and the "Return to Source" principle. Should additional information be required to process any return of funds, our team will contact you separately.
+Dear [CLIENT NAME],
 
-The Company reserves all rights under the Terms and Conditions and applicable law.
+Account number: [ACCOUNT NUMBER]
 
-Yours sincerely,
-[NAME]`;
+We are writing on behalf of Taurex Global Limited (the “Company”) regarding trading activity on your account.
+
+Following a recent thorough review of your account by our internal teams, the Company has identified trading activity that it considers inconsistent with genuine market participation and falling within one or more categories of market abuse and/or prohibited trading practices under the Company’s Terms and Conditions (the “Terms”).
+
+These practices may include, without limitation:
+Latency arbitrage or exploitation of delayed or inaccurate pricing;
+Market manipulation or coordinated trading activity;
+The use of Expert Advisors, algorithms or automated systems for machine-gun trading, automated simultaneous trade submission or exploitation of platform vulnerabilities;
+The use of shared IP addresses, linked accounts or coordinated algorithms to conduct abusive or prohibited trading;
+Trading strategies intended to exploit negative balance protection;
+Scalping or trading on erroneous, stale or non-market representative quotes; and/or
+Other arbitrage, liquidity exploitation or abusive trading strategies prohibited under the Terms.
+
+The Company’s determination is based on the overall trading and execution patterns identified on the account and is not necessarily based on any single factor in isolation.
+
+The Company considers that the activity falls within one or more of the following provisions of the Terms:
+Clause 15.1(m), concerning trading that lacks legitimate intent, is conducted in bad faith, seeks to profit from minimal or no risk, exploits price latency, arbitrage opportunities or inefficient pricing mechanisms, constitutes market abuse or prohibited trading practices, or takes place during abnormal, volatile or illiquid market conditions;
+Clause 15.1(n), concerning circumstances in which the Company reasonably believes that action is necessary or desirable to protect its best interests and/or the interests of any or all of its clients;
+Clauses 22.8 and 22.9, concerning quoting, execution, system or price-feed errors, latency arbitrage, internet connectivity delays and prices that do not accurately represent applicable market rates;
+Clause 24.4, under which negative balance protection does not apply where trading involves fraud, market abuse, abusive strategies or other prohibited practices;
+Clause 29.3(f), where a VPN, VPS, proxy or other technology is used to conceal, obscure or falsify identity, location or IP address, operate multiple accounts, abuse promotions or conduct prohibited trading practices; and
+Clauses 30.1(a), 30.1(f), 30.1(g), 30.1(h) and 30.1(i), concerning scalping, arbitrage, misuse of Expert Advisors or automated trading systems, liquidity exploitation, shared-IP or linked-account trading and other specified forms of market abuse or prohibited trading.
+
+Under Clause 30.2, the Company may take appropriate action where market abuse or prohibited trading practices have occurred or are likely to have occurred. Such action may include account suspension or termination, transaction or account corrections, deductions, set-off, recovery or clawback of profits and the application of reasonable investigation costs.
+
+The Company also relies, as applicable, on its rights under Clause 15.2 in relation to Events of Default and Clauses 29.3(c) and 29.3(d) in relation to immediate account suspension, restriction or termination.
+
+Accordingly, this communication serves as notice that the Company has taken the following action with immediate effect:
+Deducted profits generated from the prohibited trading practices identified on your account, calculated as [INSERT CURRENCY AND AMOUNT]; and
+Terminated your account and the Agreement.
+
+Any remaining eligible balance shall be handled in accordance with the Terms and the Company’s Payments Policy, including the applicable return-to-source requirements. If additional information is required to process any return of funds, our team will contact you separately.
+
+The Company reserves all rights under the Terms and applicable law.
+
+Yours Sincerely,
+The Taurex Team`;
 
 // Bonus Abuse tab uses the mandated bonus template; Market Abuse tab uses the
 // Notice of Account Action letter above.
@@ -1249,10 +1277,10 @@ function showEmailModal() {
   document.getElementById('emailTemplate').value = t.emailTemplate;
   if (t.key === 'market') {
     document.getElementById('emailModalTitle').textContent = 'Market Abuse — Notice of Account Action';
-    document.getElementById('emailModalSub').innerHTML = 'Standard Market Abuse / prohibited-trading notice. Fill in <code>[CLIENT NAME]</code>, <code>[ACCOUNT NUMBER]</code>, <code>[INSERT AMOUNT]</code> and <code>[NAME]</code>, choose the correct option in the bracketed action line, then Copy or Download.';
+    document.getElementById('emailModalSub').innerHTML = 'Standard Market Abuse / prohibited-trading notice. Fill in <code>[CLIENT NAME]</code>, <code>[ACCOUNT NUMBER]</code> and <code>[INSERT CURRENCY AND AMOUNT]</code>, then Copy or Download.';
   } else {
     document.getElementById('emailModalTitle').textContent = 'Bonus Abuse — Standard Email Template';
-    document.getElementById('emailModalSub').innerHTML = 'Use this template for any bonus abuse case unless told otherwise. Fill in <code>[NAME]</code> and <code>[INSERT AMOUNT]</code> below, then Copy or Download.';
+    document.getElementById('emailModalSub').innerHTML = 'Use this template for any bonus abuse case unless told otherwise. Fill in <code>[CLIENT NAME]</code>, <code>[ACCOUNT NUMBER]</code> and <code>[INSERT CURRENCY AND AMOUNT]</code> below, then Copy or Download.';
   }
   document.getElementById('emailModal').classList.add('show');
 }
