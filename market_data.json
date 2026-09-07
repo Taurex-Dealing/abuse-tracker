@@ -58,25 +58,6 @@
       "account_closed": ""
     },
     {
-      "id": "1788772575307",
-      "date": "2026-09-07",
-      "cu_number": "CU128755",
-      "login": "120037881",
-      "name": "DIVINE CHE",
-      "ib": "CU123786",
-      "account_manager": "",
-      "country": "Cameroon",
-      "jira_ticket": "",
-      "withdrawals_blocked": "YES",
-      "crm_note": "YES",
-      "close_only": "YES",
-      "amount_to_deduct": "",
-      "email_sent": "",
-      "adjusted": "",
-      "funding_release": "",
-      "account_closed": ""
-    },
-    {
       "id": "1788555866983",
       "date": "2026-09-04",
       "cu_number": "CU160015",
