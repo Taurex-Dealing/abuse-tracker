@@ -1,25 +1,6 @@
 {
   "cases": [
     {
-      "id": "1788781330348",
-      "date": "2026-09-07",
-      "cu_number": "CU123786",
-      "login": "2100136304",
-      "name": "NICKSON CHE AMBE",
-      "ib": "CU123786",
-      "account_manager": "Shant Zerounian",
-      "country": "Cameroon",
-      "jira_ticket": "",
-      "withdrawals_blocked": "YES",
-      "crm_note": "YES",
-      "close_only": "YES",
-      "amount_to_deduct": "",
-      "email_sent": "",
-      "adjusted": "",
-      "funding_release": "",
-      "account_closed": ""
-    },
-    {
       "id": "1788781329851",
       "date": "2026-09-07",
       "cu_number": "CU123786",
