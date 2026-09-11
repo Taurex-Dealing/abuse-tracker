@@ -1,26 +1,6 @@
 {
   "cases": [
     {
-      "id": "1789040735597",
-      "date": "2026-09-10",
-      "cu_number": "CU32083",
-      "login": "2100139111",
-      "name": "ANTONIO DONATELLI",
-      "ib": "CU20464",
-      "account_manager": "Angelo Pieries",
-      "country": "Italy",
-      "jira_ticket": "https://zenfinex.atlassian.net/browse/DTS-21306",
-      "withdrawals_blocked": "NO",
-      "crm_note": "YES",
-      "close_only": "YES",
-      "amount_to_deduct": "0",
-      "email_sent": "",
-      "adjusted": "",
-      "funding_release": "",
-      "account_closed": "",
-      "jira_pushed": "YES"
-    },
-    {
       "id": "1788772883575",
       "date": "2026-09-07",
       "cu_number": "CU166632",
