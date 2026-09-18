@@ -49,7 +49,7 @@
       "ib": "CU164277",
       "account_manager": "",
       "country": "China",
-      "jira_ticket": "",
+      "jira_ticket": "https://zenfinex.atlassian.net/browse/DTS-21499",
       "withdrawals_blocked": "NO",
       "crm_note": "YES",
       "close_only": "YES",
