@@ -10,7 +10,7 @@
       "account_manager": "Sophia Chin",
       "country": "Malaysia",
       "jira_ticket": "https://zenfinex.atlassian.net/browse/DTS-21537",
-      "withdrawals_blocked": "",
+      "withdrawals_blocked": "YES",
       "crm_note": "",
       "close_only": "",
       "amount_to_deduct": "",
