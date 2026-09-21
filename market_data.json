@@ -12,7 +12,7 @@
       "jira_ticket": "https://zenfinex.atlassian.net/browse/DTS-21537",
       "withdrawals_blocked": "YES",
       "crm_note": "YES",
-      "close_only": "",
+      "close_only": "YES",
       "amount_to_deduct": "",
       "email_sent": "",
       "adjusted": "",
