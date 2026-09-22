@@ -1,26 +1,6 @@
 {
   "cases": [
     {
-      "id": "1789992173010",
-      "date": "2026-09-21",
-      "cu_number": "CU131361",
-      "login": "120032104",
-      "name": "EU CHEN DILLON GOH",
-      "ib": "CU104727",
-      "account_manager": "Sophia Chin",
-      "country": "Malaysia",
-      "jira_ticket": "https://zenfinex.atlassian.net/browse/DTS-21537",
-      "withdrawals_blocked": "YES",
-      "crm_note": "YES",
-      "close_only": "YES",
-      "amount_to_deduct": "29038.73",
-      "email_sent": "YES",
-      "adjusted": "",
-      "funding_release": "",
-      "account_closed": "",
-      "jira_pushed": "YES"
-    },
-    {
       "id": "1789725276339",
       "date": "2026-09-18",
       "cu_number": "CU164277",
