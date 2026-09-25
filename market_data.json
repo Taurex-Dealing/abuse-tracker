@@ -89,7 +89,7 @@
       "ib": "",
       "account_manager": "Miguel Adrian Perez Azmouz",
       "country": "Argentina",
-      "jira_ticket": "",
+      "jira_ticket": "https://zenfinex.atlassian.net/browse/DTS-21606",
       "withdrawals_blocked": "NO",
       "crm_note": "YES",
       "close_only": "YES",
