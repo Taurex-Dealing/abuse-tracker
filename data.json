@@ -1,6 +1,26 @@
 {
   "cases": [
     {
+      "id": "1790606948368",
+      "date": "2026-09-28",
+      "cu_number": "",
+      "login": "",
+      "name": "",
+      "ib": "",
+      "account_manager": "",
+      "country": "",
+      "jira_ticket": "",
+      "withdrawals_blocked": "",
+      "crm_note": "",
+      "close_only": "",
+      "amount_to_deduct": "",
+      "email_sent": "",
+      "credit_removed": "",
+      "adjusted": "",
+      "funding_release": "",
+      "account_closed": ""
+    },
+    {
       "id": "1787915843722",
       "date": "2026-08-28",
       "cu_number": "CU166376",
