@@ -9,7 +9,7 @@
       "ib": "728-Astro",
       "account_manager": "Miguel Adrian Perez Azmouz",
       "country": "Brazil",
-      "jira_ticket": "",
+      "jira_ticket": "https://zenfinex.atlassian.net/browse/DTS-21634",
       "withdrawals_blocked": "YES",
       "crm_note": "YES",
       "close_only": "YES",
