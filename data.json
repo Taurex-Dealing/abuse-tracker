@@ -1,6 +1,26 @@
 {
   "cases": [
     {
+      "id": "1791269027780",
+      "date": "2026-10-06",
+      "cu_number": "",
+      "login": "",
+      "name": "",
+      "ib": "",
+      "account_manager": "",
+      "country": "",
+      "jira_ticket": "",
+      "withdrawals_blocked": "",
+      "crm_note": "",
+      "close_only": "",
+      "amount_to_deduct": "",
+      "email_sent": "",
+      "credit_removed": "",
+      "adjusted": "",
+      "funding_release": "",
+      "account_closed": ""
+    },
+    {
       "id": "1790653204808",
       "date": "2026-09-29",
       "cu_number": "239822-Astro",
