@@ -61,26 +61,6 @@
       "jira_pushed": "YES"
     },
     {
-      "id": "1788490763699",
-      "date": "2026-09-04",
-      "cu_number": "ASTRO 336050",
-      "login": "120038098",
-      "name": "YI HAO KOK",
-      "ib": "",
-      "account_manager": "Norafiqah Ramli",
-      "country": "Malaysia",
-      "jira_ticket": "https://zenfinex.atlassian.net/browse/DTS-21173",
-      "withdrawals_blocked": "YES",
-      "crm_note": "YES",
-      "close_only": "YES",
-      "amount_to_deduct": "4195.6",
-      "email_sent": "YES",
-      "adjusted": "YES",
-      "funding_release": "YES",
-      "account_closed": "",
-      "jira_pushed": "YES"
-    },
-    {
       "id": "1787319538373",
       "date": "2026-08-21",
       "cu_number": "ASTRO 230410",
@@ -198,6 +178,26 @@
       "adjusted": "YES",
       "funding_release": "NO",
       "account_closed": "YES",
+      "jira_pushed": "YES"
+    },
+    {
+      "id": "1788490763699",
+      "date": "2026-09-04",
+      "cu_number": "ASTRO 336050",
+      "login": "120038098",
+      "name": "YI HAO KOK",
+      "ib": "",
+      "account_manager": "Norafiqah Ramli",
+      "country": "Malaysia",
+      "jira_ticket": "https://zenfinex.atlassian.net/browse/DTS-21173",
+      "withdrawals_blocked": "YES",
+      "crm_note": "YES",
+      "close_only": "YES",
+      "amount_to_deduct": "4195.6",
+      "email_sent": "YES",
+      "adjusted": "YES",
+      "funding_release": "",
+      "account_closed": "",
       "jira_pushed": "YES"
     },
     {
