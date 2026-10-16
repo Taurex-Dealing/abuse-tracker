@@ -70,7 +70,7 @@
       "account_manager": "",
       "country": "Turkey",
       "jira_ticket": "",
-      "withdrawals_blocked": "",
+      "withdrawals_blocked": "YES",
       "crm_note": "",
       "close_only": "",
       "amount_to_deduct": "11720.64",
