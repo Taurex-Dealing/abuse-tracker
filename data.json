@@ -51,7 +51,7 @@
       "ib": "1885",
       "account_manager": "Najla Murad",
       "country": "Turkey",
-      "jira_ticket": "",
+      "jira_ticket": "https://zenfinex.atlassian.net/jira/servicedesk/projects/DTS/queues/custom/66/DTS-21882",
       "withdrawals_blocked": "YES",
       "crm_note": "YES",
       "close_only": "YES",
