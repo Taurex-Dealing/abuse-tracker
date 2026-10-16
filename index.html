@@ -1008,12 +1008,14 @@ function renderHead(t) {
       h += '<th data-col="' + col.field + '" onclick="sortTable(\'' + col.field + '\')">' + escapeHtml(col.label) + ' <span class="sort-arrow">&#9650;</span></th>';
     }
   });
+  // Same per-column width on every tab: tabs with fewer columns get an empty filler column (same row background) before the delete column,
+  // so the table still fills the panel and cell size / wrapping / shading look identical across tabs.
+  if (fillerCols(t) > 0) h += '<th class="filler"></th>';
   h += '<th class="actions-cell"></th></tr>';
   document.getElementById('caseHead').innerHTML = h;
-  // Same per-column width on every tab: a tab with fewer columns gets a proportionally narrower table instead of wider cells.
-  var tbl = document.getElementById('caseHead').closest('table');
-  if (tbl) tbl.style.width = ((t.columns.length + 2) / MAX_COLS * 100).toFixed(2) + '%';
+  document.querySelectorAll('#caseHead th:not(.row-num):not(.actions-cell):not(.filler)').forEach(function(th){ th.style.width = 'calc((100% - 80px) / ' + (MAX_COLS - 2) + ')'; });
 }
+function fillerCols(t){ return MAX_COLS - (t.columns.length + 2); }
 
 function applySortIndicator(t) {
   document.querySelectorAll('#caseHead th').forEach(function(th) { th.classList.remove('sorted'); });
@@ -1044,7 +1046,7 @@ function renderTable() {
   }
 
   if (filtered.length === 0) {
-    var span = t.columns.length + 2;
+    var span = MAX_COLS;
     tbody.innerHTML = '<tr><td colspan="' + span + '"><div class="empty-state"><p>No cases found</p><button class="btn btn-gold" onclick="addRow()">+ Add First Case</button></div></td></tr>';
   } else {
     var html = '';
@@ -1066,6 +1068,7 @@ function renderTable() {
           html += '<td class="editable" onclick="editCell(this,\'' + c.id + '\',\'' + col.field + '\',\'' + col.type + '\')">' + escapeHtml(c[col.field]) + '</td>';
         }
       });
+      if (fillerCols(t) > 0) html += '<td class="filler"></td>';
       html += '<td class="actions-cell"><button class="btn btn-danger" onclick="deleteRow(\'' + c.id + '\')">&#10005;</button></td>';
       html += '</tr>';
     }
