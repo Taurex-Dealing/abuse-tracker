@@ -81,7 +81,8 @@
       "credit_removed": "",
       "adjusted": "",
       "funding_release": "",
-      "account_closed": ""
+      "account_closed": "",
+      "jira_pushed": "YES"
     },
     {
       "id": "1791269027780",
