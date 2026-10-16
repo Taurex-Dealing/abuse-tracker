@@ -72,7 +72,7 @@
       "jira_ticket": "",
       "withdrawals_blocked": "YES",
       "crm_note": "YES",
-      "close_only": "",
+      "close_only": "YES",
       "amount_to_deduct": "11720.64",
       "email_sent": "",
       "credit_removed": "",
