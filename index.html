@@ -508,6 +508,7 @@ td select { cursor: pointer; appearance: auto; }
   <div class="tabs">
     <button class="tab-btn active" data-tab="bonus" onclick="switchTab('bonus')">Bonus Abuse Tracker</button>
     <button class="tab-btn" data-tab="market" onclick="switchTab('market')">Market Abuse Tracker</button>
+    <button class="tab-btn" data-tab="swap" onclick="switchTab('swap')">Swap Abuse Tracker</button>
   </div>
 
   <!-- Toolbar -->
@@ -708,8 +709,12 @@ var trackers = {
   // Bonus Abuse = the original tool, all columns. emailTemplate assigned below (after the const).
   bonus:  makeTracker({ key:'bonus',  dataPath:'data.json',        label:'Bonus Abuse Tracker',  columns:ALL_COLUMNS,                    emailTemplate:'', csvPrefix:'bonus_abuse_cases' }),
   // Market Abuse = latency / abusive-flow log. Same columns minus Credit Removed; blank email template.
-  market: makeTracker({ key:'market', dataPath:'market_data.json', label:'Market Abuse Tracker', columns:colsExcept(['credit_removed']), emailTemplate:'', csvPrefix:'market_abuse_cases' })
+  market: makeTracker({ key:'market', dataPath:'market_data.json', label:'Market Abuse Tracker', columns:colsExcept(['credit_removed']), emailTemplate:'', csvPrefix:'market_abuse_cases' }),
+  // Swap Abuse = swap-free / swap arbitrage log (added 2026-10-16). Same columns as Market; blank email template for now.
+  swap:   makeTracker({ key:'swap',   dataPath:'swap_data.json',   label:'Swap Abuse Tracker',   columns:colsExcept(['credit_removed']), emailTemplate:'', csvPrefix:'swap_abuse_cases' })
 };
+// Widest tracker (incl. # and delete columns) — every tab uses the SAME column width so fonts/wrapping look identical across tabs.
+var MAX_COLS = Math.max.apply(null, Object.keys(trackers).map(function(k){ return trackers[k].columns.length; })) + 2;
 var activeKey = 'bonus';
 function active(){ return trackers[activeKey]; }
 
@@ -1005,6 +1010,9 @@ function renderHead(t) {
   });
   h += '<th class="actions-cell"></th></tr>';
   document.getElementById('caseHead').innerHTML = h;
+  // Same per-column width on every tab: a tab with fewer columns gets a proportionally narrower table instead of wider cells.
+  var tbl = document.getElementById('caseHead').closest('table');
+  if (tbl) tbl.style.width = ((t.columns.length + 2) / MAX_COLS * 100).toFixed(2) + '%';
 }
 
 function applySortIndicator(t) {
