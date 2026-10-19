@@ -29,7 +29,7 @@
       "ib": "3627",
       "account_manager": "Norafiqah Ramli",
       "country": "Malaysia",
-      "jira_ticket": "",
+      "jira_ticket": "https://zenfinex.atlassian.net/browse/DTS-21903",
       "withdrawals_blocked": "YES",
       "crm_note": "YES",
       "close_only": "YES",
