@@ -710,7 +710,7 @@ var trackers = {
   bonus:  makeTracker({ key:'bonus',  dataPath:'data.json',        label:'Bonus Abuse Tracker',  columns:ALL_COLUMNS,                    emailTemplate:'', csvPrefix:'bonus_abuse_cases' }),
   // Market Abuse = latency / abusive-flow log. Same columns minus Credit Removed; blank email template.
   market: makeTracker({ key:'market', dataPath:'market_data.json', label:'Market Abuse Tracker', columns:colsExcept(['credit_removed']), emailTemplate:'', csvPrefix:'market_abuse_cases' }),
-  // Swap Abuse = swap-free / swap arbitrage log (added 2026-10-16). Same columns as Market; blank email template for now.
+  // Swap Abuse = swap-free / swap arbitrage log (added 2026-10-16). Same columns as Market; emailTemplate assigned below.
   swap:   makeTracker({ key:'swap',   dataPath:'swap_data.json',   label:'Swap Abuse Tracker',   columns:colsExcept(['credit_removed']), emailTemplate:'', csvPrefix:'swap_abuse_cases' })
 };
 // Widest tracker (incl. # and delete columns) — every tab uses the SAME column width so fonts/wrapping look identical across tabs.
@@ -1278,15 +1278,70 @@ The Company reserves all rights under the Terms and applicable law.
 Yours Sincerely,
 The Taurex Team`;
 
+// Swap Abuse tab template — Compliance-approved wording (19 Oct 2026, from
+// Downloads\Swap_Abuse_Email_Template_DRAFT_16Oct2026). Clauses per SEY T&Cs v10.
+var SWAP_EMAIL_TEMPLATE = `Subject: Notice of Account Action – Swap-Free Abuse, Financing Rate Exploitation and Prohibited Trading Practices
+
+Dear [CLIENT NAME],
+
+Account number: [ACCOUNT NUMBER]
+
+We are writing on behalf of Taurex Global Limited (the “Company”) regarding trading activity on your account in connection with the swap-free status and/or the overnight financing (swap) arrangements applied to it.
+
+Following a recent thorough review of your account by our internal teams, the Company has identified trading activity that it considers inconsistent with genuine market participation and falling within one or more categories of swap-free abuse, financing rate exploitation and/or prohibited trading practices under the Company’s Terms and Conditions (the “Terms”).
+
+These practices may include, without limitation:
+• Holding positions on a swap-free account predominantly in instruments and directions that would otherwise incur a negative overnight swap, for the purpose of avoiding financing charges rather than for genuine trading;
+• Interest or cash-back arbitrage, including maintaining positions across swap-free and swap-paying accounts, or across multiple accounts or brokers, so as to receive positive swap on one side while avoiding the corresponding negative swap on the other;
+• Holding offsetting or near-offsetting positions in correlated instruments with minimal or no directional market risk, where the economic purpose of the trades is the swap or financing differential;
+• Systematically opening positions ahead of, and closing shortly after, the daily rollover or the triple-swap rollover day;
+• Operating single or multiple accounts, including linked accounts or accounts of related parties, to conduct any of the above;
+• High risk trading activity where more than 70% of the account’s net exposure is concentrated in specific products or consistently maintains the same trading direction; and/or
+• Other conduct intended to obtain the benefit of swap-free status or financing rates through abusive or prohibited practices.
+
+The Company’s determination is based on the overall trading, holding and execution patterns identified on the account, including the instruments traded, the direction of positions and the length of time positions were held open, and is not necessarily based on any single factor in isolation.
+
+In particular, Clause 28 of the Terms governs swap-free accounts. Under Clause 28.4 swap-free status is granted at the Company’s sole and absolute discretion and the Company may request justification of the need for such an account. Under Clause 28.5 the Company may revoke swap-free status at any time, without being obliged to provide any explanation, and may close any open positions and/or the account, having regard to, among other things, the client’s trading history, the products traded, market conditions and the length of time trades are held open. Under Clause 28.6, where the Company in its opinion detects any form of abuse, fraud, manipulation, interest or cash-back arbitrage, or any other form of deceitful or fraudulent activity in relation to swap-free accounts, it may without prior notice revoke swap-free status, correct and recover any un-accrued swaps and related interest for the period the accounts were live, apply a commission, swap or other fee to open or new positions, convert swap-free accounts to normal accounts, prohibit or limit hedging positions, and close all accounts held by the client, nullify trades and cancel any profits or losses generated.
+
+The Company further considers that the activity falls within one or more of the following provisions of the Terms:
+• Clause 30.1(c), under which clients must adhere to the terms and conditions of swap-free accounts without engaging in manipulative practices aimed at exploiting this feature for unfair advantage, and any misuse of swap-free accounts is considered abusive behaviour;
+• Clause 30.1(f), concerning arbitrage, including acting in unison with other parties or exploiting discrepancies across platforms or systems;
+• Clause 30.1(i), concerning operating single or multiple accounts for arbitrage, malicious hedging, and maintaining excessively concentrated exposure or a fixed trading direction;
+• Clause 14.1, under which positions are rolled over and the account debited or credited in accordance with the Company’s Rollover/Interest Policy;
+• Clause 15.1(m), concerning trading that lacks legitimate intent, is conducted in bad faith, seeks to profit from minimal or no risk, or exploits arbitrage opportunities or inefficient pricing mechanisms;
+• Clause 22.8, under which the Company may correct any instance where a client has been undercharged any fees, including swap fees, and recover such amounts; and
+• Clause 29.3(f), where a VPN, VPS, proxy or other technology is used to operate multiple accounts, abuse promotions or conduct prohibited trading practices.
+
+Under Clause 30.2, the Company may take appropriate action where market abuse or prohibited trading practices have occurred or are likely to have occurred. Such action may include account suspension or termination, transaction or account corrections, deductions, set-off, recovery or clawback of profits and the application of reasonable investigation costs.
+
+The Company also relies, as applicable, on its rights under Clause 15.2 in relation to Events of Default, Clauses 23.2 and 23.4 concerning set-off, and Clauses 29.3(c) and 29.3(d) in relation to immediate account suspension, restriction or termination.
+
+Accordingly, this communication serves as notice that the Company has taken the following action with immediate effect:
+• Revoked the swap-free status on your account(s);
+• Deducted profits generated from the swap-free abuse, financing rate exploitation and/or prohibited trading practices identified on your account, calculated as [INSERT CURRENCY AND AMOUNT];
+• Recovered un-accrued swap and financing charges for the period during which the account(s) held swap-free status, calculated as [INSERT CURRENCY AND AMOUNT OF SWAPS RECOVERED]; and
+• Terminated your account and the Agreement.
+
+Any remaining eligible balance shall be handled in accordance with the Terms and the Company’s Payments Policy, including the applicable return-to-source requirements. If additional information is required to process any return of funds, our team will contact you separately.
+
+The Company reserves all rights under the Terms and applicable law.
+
+Yours Sincerely,
+The Taurex Team`;
+
 // Bonus Abuse tab uses the mandated bonus template; Market Abuse tab uses the
-// Notice of Account Action letter above.
+// Notice of Account Action letter above; Swap Abuse tab uses the swap-free letter.
 trackers.bonus.emailTemplate = EMAIL_TEMPLATE;
 trackers.market.emailTemplate = MARKET_EMAIL_TEMPLATE;
+trackers.swap.emailTemplate = SWAP_EMAIL_TEMPLATE;
 
 function showEmailModal() {
   var t = active();
   document.getElementById('emailTemplate').value = t.emailTemplate;
-  if (t.key === 'market') {
+  if (t.key === 'swap') {
+    document.getElementById('emailModalTitle').textContent = 'Swap Abuse — Notice of Account Action';
+    document.getElementById('emailModalSub').innerHTML = 'Standard Swap-Free Abuse notice. Fill in <code>[CLIENT NAME]</code>, <code>[ACCOUNT NUMBER]</code>, <code>[INSERT CURRENCY AND AMOUNT]</code> and <code>[INSERT CURRENCY AND AMOUNT OF SWAPS RECOVERED]</code>, then Copy or Download.';
+  } else if (t.key === 'market') {
     document.getElementById('emailModalTitle').textContent = 'Market Abuse — Notice of Account Action';
     document.getElementById('emailModalSub').innerHTML = 'Standard Market Abuse / prohibited-trading notice. Fill in <code>[CLIENT NAME]</code>, <code>[ACCOUNT NUMBER]</code> and <code>[INSERT CURRENCY AND AMOUNT]</code>, then Copy or Download.';
   } else {
