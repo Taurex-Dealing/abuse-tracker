@@ -526,6 +526,7 @@ td select { cursor: pointer; appearance: auto; }
       <button class="btn btn-outline" id="metabaseBtn" onclick="window.open('http://ec2-13-134-40-213.eu-west-2.compute.amazonaws.com:3000/question/143-bonus-abuse-by-cid','_blank','noopener')">Metabase &#8599;</button>
       <button class="btn btn-outline" onclick="exportCSV()">Export CSV</button>
       <button class="btn btn-outline" onclick="showEmailModal()">Email Template</button>
+      <button class="btn btn-outline" id="responseBtn" onclick="showResponseModal()">Response Email Template</button>
       <button class="btn btn-outline" onclick="showPatModal()">PAT Token</button>
       <button class="btn btn-gold" onclick="addRow()">+ Add Case</button>
     </div>
@@ -921,6 +922,8 @@ function updateTabUI() {
   document.getElementById('pageTitle').textContent = active().label;
   // Metabase button is bonus-abuse only — hide it on other tabs.
   document.getElementById('metabaseBtn').style.display = (activeKey === 'bonus') ? '' : 'none';
+  // Response (second-wave) email template is bonus-abuse only for now.
+  document.getElementById('responseBtn').style.display = (activeKey === 'bonus') ? '' : 'none';
 }
 
 function addRow() {
@@ -1335,8 +1338,40 @@ trackers.bonus.emailTemplate = EMAIL_TEMPLATE;
 trackers.market.emailTemplate = MARKET_EMAIL_TEMPLATE;
 trackers.swap.emailTemplate = SWAP_EMAIL_TEMPLATE;
 
+// Bonus Abuse second-wave reply — sent when a client responds to the first notice.
+// Added 2026-10-19 (wording supplied by Sean). Bonus tab only.
+var RESPONSE_EMAIL_TEMPLATE = `Dear [CLIENT NAME],
+
+Account number: [ACCOUNT NUMBER]
+
+Thank you for your message. We have completed a further review of your account and of the adjustment of [CURRENCY AND AMOUNT] made in connection with the Bonus Promotion.
+
+Our review found that trading activity on your account did not comply with the trading conditions of the Bonus Promotion and fell within one or more of the prohibited trading practices set out in Clause 30.1(i) of the Company’s Terms and Conditions (the “Terms”) and in the Bonus Promotion terms. These practices include, among others, high-frequency trading, malicious hedging, placing an account under a single exposure through multiple similar trades, excessively concentrated exposure, and maintaining a fixed trading direction.
+
+This conclusion is based on the trading activity recorded on your account, including trade timestamps, position direction and size, holding periods and exposure. It is not based on a general assumption that profitable trading constitutes abuse.
+
+Clause 30.2 of the Terms allows the Company to take appropriate action, including deducting profits, where prohibited trading practices are identified. Having reviewed the matter again, our decision regarding the [CURRENCY AND AMOUNT] adjustment remains unchanged.
+
+This is the Company’s final response on this matter. If you remain dissatisfied, you may submit a complaint to the Seychelles Financial Services Authority (FSA) through its complaint-handling process: https://fsaseychelles.sc/complaint-handling
+
+Kind regards,
+[NAME]
+The Taurex Team`;
+
+// Which template the modal currently holds — drives Reset and the download filename.
+var modalTemplate = { text: '', file: 'bonus_abuse_email_template.txt' };
+
+function showResponseModal() {
+  modalTemplate = { text: RESPONSE_EMAIL_TEMPLATE, file: 'bonus_abuse_response_email_template.txt' };
+  document.getElementById('emailTemplate').value = RESPONSE_EMAIL_TEMPLATE;
+  document.getElementById('emailModalTitle').textContent = 'Bonus Abuse — Response Email Template';
+  document.getElementById('emailModalSub').innerHTML = 'Final-response reply when a client answers the first notice. Fill in <code>[CLIENT NAME]</code>, <code>[ACCOUNT NUMBER]</code>, <code>[CURRENCY AND AMOUNT]</code> (twice) and <code>[NAME]</code>, then Copy or Download.';
+  document.getElementById('emailModal').classList.add('show');
+}
+
 function showEmailModal() {
   var t = active();
+  modalTemplate = { text: t.emailTemplate, file: t.key + '_abuse_email_template.txt' };
   document.getElementById('emailTemplate').value = t.emailTemplate;
   if (t.key === 'swap') {
     document.getElementById('emailModalTitle').textContent = 'Swap Abuse — Notice of Account Action';
@@ -1352,7 +1387,7 @@ function showEmailModal() {
 }
 
 function resetEmailTemplate() {
-  document.getElementById('emailTemplate').value = active().emailTemplate;
+  document.getElementById('emailTemplate').value = modalTemplate.text;
 }
 
 function copyEmailTemplate() {
@@ -1375,7 +1410,7 @@ function downloadEmailTemplate() {
   var blob = new Blob([document.getElementById('emailTemplate').value], { type: 'text/plain;charset=utf-8' });
   var a = document.createElement('a');
   a.href = URL.createObjectURL(blob);
-  a.download = (active().key === 'market' ? 'market_abuse' : 'bonus_abuse') + '_email_template.txt';
+  a.download = modalTemplate.file;
   a.click();
 }
 
