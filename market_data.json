@@ -30,7 +30,7 @@
       "country": "Malaysia",
       "jira_ticket": "",
       "withdrawals_blocked": "",
-      "crm_note": "",
+      "crm_note": "YES",
       "close_only": "YES",
       "amount_to_deduct": "4623.69",
       "email_sent": "",
