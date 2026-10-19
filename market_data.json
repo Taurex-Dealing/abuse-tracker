@@ -29,7 +29,7 @@
       "account_manager": "Norafiqah Ramli",
       "country": "Malaysia",
       "jira_ticket": "",
-      "withdrawals_blocked": "",
+      "withdrawals_blocked": "YES",
       "crm_note": "YES",
       "close_only": "YES",
       "amount_to_deduct": "4623.69",
