@@ -55,7 +55,7 @@
       "close_only": "YES",
       "amount_to_deduct": "4835.55",
       "email_sent": "YES",
-      "adjusted": "",
+      "adjusted": "YES",
       "funding_release": "YES",
       "account_closed": "YES",
       "jira_pushed": "YES"
