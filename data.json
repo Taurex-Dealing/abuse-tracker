@@ -1,26 +1,6 @@
 {
   "cases": [
     {
-      "id": "1792563939160",
-      "date": "2026-10-21",
-      "cu_number": "",
-      "login": "120040600",
-      "name": "juan li",
-      "ib": "896",
-      "account_manager": "",
-      "country": "China",
-      "jira_ticket": "",
-      "withdrawals_blocked": "",
-      "crm_note": "",
-      "close_only": "",
-      "amount_to_deduct": "",
-      "email_sent": "",
-      "credit_removed": "",
-      "adjusted": "",
-      "funding_release": "",
-      "account_closed": ""
-    },
-    {
       "id": "1792147807695",
       "date": "2026-10-16",
       "cu_number": "511308",
