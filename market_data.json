@@ -1,25 +1,6 @@
 {
   "cases": [
     {
-      "id": "1792563858583",
-      "date": "2026-10-21",
-      "cu_number": "505277",
-      "login": "120040600",
-      "name": "Muhammad Hanif",
-      "ib": "",
-      "account_manager": "Farizul Yatim",
-      "country": "Indonesia",
-      "jira_ticket": "",
-      "withdrawals_blocked": "YES",
-      "crm_note": "YES",
-      "close_only": "YES",
-      "amount_to_deduct": "0",
-      "email_sent": "",
-      "adjusted": "",
-      "funding_release": "",
-      "account_closed": ""
-    },
-    {
       "id": "1792562982542",
       "date": "2026-10-21",
       "cu_number": "357276",
