@@ -1,6 +1,26 @@
 {
   "cases": [
     {
+      "id": "1792589619875",
+      "date": "2026-10-21",
+      "cu_number": "",
+      "login": "",
+      "name": "",
+      "ib": "",
+      "account_manager": "",
+      "country": "",
+      "jira_ticket": "",
+      "withdrawals_blocked": "",
+      "crm_note": "",
+      "close_only": "",
+      "amount_to_deduct": "",
+      "email_sent": "",
+      "credit_removed": "",
+      "adjusted": "",
+      "funding_release": "",
+      "account_closed": ""
+    },
+    {
       "id": "1792563939160",
       "date": "2026-10-21",
       "cu_number": "",
@@ -19,27 +39,6 @@
       "adjusted": "",
       "funding_release": "",
       "account_closed": ""
-    },
-    {
-      "id": "1784619749744",
-      "date": "2026-07-21",
-      "cu_number": "CU164098",
-      "login": "120035719",
-      "name": "AMJAD ALI RAKLAM SHER",
-      "ib": "N/A",
-      "account_manager": "Muhammad Iqbal",
-      "country": "Pakistan",
-      "jira_ticket": "https://zenfinex.atlassian.net/browse/DTS-20488",
-      "withdrawals_blocked": "YES",
-      "crm_note": "YES",
-      "close_only": "YES",
-      "amount_to_deduct": "3570.99",
-      "email_sent": "NO",
-      "credit_removed": "YES",
-      "adjusted": "NO",
-      "funding_release": "NO",
-      "account_closed": "NO",
-      "jira_pushed": "YES"
     },
     {
       "id": "1792147807695",
@@ -207,6 +206,27 @@
       "adjusted": "YES",
       "funding_release": "YES",
       "account_closed": "YES",
+      "jira_pushed": "YES"
+    },
+    {
+      "id": "1784619749744",
+      "date": "2026-07-21",
+      "cu_number": "CU164098",
+      "login": "120035719",
+      "name": "AMJAD ALI RAKLAM SHER",
+      "ib": "N/A",
+      "account_manager": "Muhammad Iqbal",
+      "country": "Pakistan",
+      "jira_ticket": "https://zenfinex.atlassian.net/browse/DTS-20488",
+      "withdrawals_blocked": "YES",
+      "crm_note": "YES",
+      "close_only": "YES",
+      "amount_to_deduct": "3570.99",
+      "email_sent": "NO",
+      "credit_removed": "YES",
+      "adjusted": "NO",
+      "funding_release": "NO",
+      "account_closed": "NO",
       "jira_pushed": "YES"
     },
     {
