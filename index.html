@@ -923,7 +923,7 @@ function updateTabUI() {
   // Metabase button is bonus-abuse only — hide it on other tabs.
   document.getElementById('metabaseBtn').style.display = (activeKey === 'bonus') ? '' : 'none';
   // Response (second-wave) email template exists for Bonus and Swap tabs.
-  document.getElementById('responseBtn').style.display = (activeKey === 'bonus' || activeKey === 'swap') ? '' : 'none';
+  document.getElementById('responseBtn').style.display = '';  // all three tabs have a response template
 }
 
 function addRow() {
@@ -1375,17 +1375,41 @@ This is the Company’s final response on this matter. If you remain dissatisfie
 Kind regards,
 The Taurex Team`;
 
+// Market Abuse second-wave reply — sent when a client responds to the first market-abuse notice.
+// Added 2026-10-23 (wording supplied by Sean). Market tab only. No placeholders by design.
+var MARKET_RESPONSE_EMAIL_TEMPLATE = `Thank you for your email.
+
+Following our review, we confirm that our decision regarding the profit deductions and termination of your trading account remains unchanged.
+
+As previously communicated, your trading activities were identified as prohibited trading practices, in breach of our Terms and Conditions, particularly the following clauses:
+
+• Clause 30.2 – Company's right to recover or deduct profits generated through abusive or prohibited trading practices.
+• Clause 15.1(m) – Abusive trading activities constituting an Event of Default.
+• Clauses 15.2(vi) and 29.3(d) – Company's right to terminate the agreement or trading account following prohibited trading activities.
+
+Accordingly, our decision remains unchanged, and we will not be providing any further details regarding our internal investigation beyond those already communicated.
+
+Should you remain dissatisfied with our decision, you may escalate your complaint to the Financial Services Authority (FSA) Seychelles through its official website:
+Financial Services Authority – https://fsaseychelles.sc/complaint-handling
+
+Kind regards,
+The Taurex Team`;
+
 // Which template the modal currently holds — drives Reset and the download filename.
 var modalTemplate = { text: '', file: 'bonus_abuse_email_template.txt' };
 
 function showResponseModal() {
   var isSwap = (activeKey === 'swap');
-  var tpl = isSwap ? SWAP_RESPONSE_EMAIL_TEMPLATE : RESPONSE_EMAIL_TEMPLATE;
-  modalTemplate = { text: tpl, file: (isSwap ? 'swap' : 'bonus') + '_abuse_response_email_template.txt' };
+  var isMarket = (activeKey === 'market');
+  var tpl = isSwap ? SWAP_RESPONSE_EMAIL_TEMPLATE : (isMarket ? MARKET_RESPONSE_EMAIL_TEMPLATE : RESPONSE_EMAIL_TEMPLATE);
+  modalTemplate = { text: tpl, file: activeKey + '_abuse_response_email_template.txt' };
   document.getElementById('emailTemplate').value = tpl;
   if (isSwap) {
     document.getElementById('emailModalTitle').textContent = 'Swap Abuse — Response Email Template';
     document.getElementById('emailModalSub').innerHTML = 'Final-response reply when a client answers the first swap-free notice. Fill in <code>[Client Name]</code> and <code>[CURRENCY AND AMOUNT]</code> (twice: profit adjustment, then swaps recovered), then Copy or Download.';
+  } else if (isMarket) {
+    document.getElementById('emailModalTitle').textContent = 'Market Abuse — Response Email Template';
+    document.getElementById('emailModalSub').innerHTML = 'Final-response reply when a client answers the first market-abuse notice. No fill-ins required — add a greeting line if you wish, then Copy or Download.';
   } else {
     document.getElementById('emailModalTitle').textContent = 'Bonus Abuse — Response Email Template';
     document.getElementById('emailModalSub').innerHTML = 'Final-response reply when a client answers the first notice. Fill in <code>[CLIENT NAME]</code>, <code>[ACCOUNT NUMBER]</code>, <code>[CURRENCY AND AMOUNT]</code> (twice) and <code>[NAME]</code>, then Copy or Download.';
