@@ -922,8 +922,8 @@ function updateTabUI() {
   document.getElementById('pageTitle').textContent = active().label;
   // Metabase button is bonus-abuse only — hide it on other tabs.
   document.getElementById('metabaseBtn').style.display = (activeKey === 'bonus') ? '' : 'none';
-  // Response (second-wave) email template is bonus-abuse only for now.
-  document.getElementById('responseBtn').style.display = (activeKey === 'bonus') ? '' : 'none';
+  // Response (second-wave) email template exists for Bonus and Swap tabs.
+  document.getElementById('responseBtn').style.display = (activeKey === 'bonus' || activeKey === 'swap') ? '' : 'none';
 }
 
 function addRow() {
@@ -1358,14 +1358,38 @@ Kind regards,
 [NAME]
 The Taurex Team`;
 
+// Swap Abuse second-wave reply — sent when a client responds to the first swap-free notice.
+// Added 2026-10-23 (wording supplied by Sean). Swap tab only.
+var SWAP_RESPONSE_EMAIL_TEMPLATE = `Dear [Client Name],
+
+Thank you for your message. We have completed a further review of your account and the adjustments made in connection with its swap-free status.
+
+Our review found activity that we consider inconsistent with genuine market participation and falling within one or more forms of swap-free abuse, financing-rate exploitation and prohibited trading practices under the Company’s Terms and Conditions (the “Terms”). This may include, for example, patterns involving positions held around daily or triple-swap rollovers, offsetting or concentrated exposure, or the use of multiple accounts to benefit from financing differences.
+
+Our assessment considered the overall trading and holding patterns on the account, including the instruments traded, position directions and holding periods. It was not based on any single factor in isolation. The relevant provisions include Clauses 28.4–28.6, 30.1(c), 30.1(f), 30.1(i), 15.1(m) and 22.8 of the Terms. Clause 30.2 permits the Company to take appropriate action where prohibited trading practices are identified.
+
+Having reviewed the matter again, our decision remains unchanged. The Company has revoked the account’s swap-free status, applied a profit adjustment of [CURRENCY AND AMOUNT], recovered [CURRENCY AND AMOUNT] in applicable swap and financing charges, and terminated the account and Agreement.
+
+This is the Company’s final response on this matter. If you remain dissatisfied, you may submit a complaint to the Seychelles Financial Services Authority (FSA) through its complaint-handling process: https://fsaseychelles.sc/complaint-handling
+
+Kind regards,
+The Taurex Team`;
+
 // Which template the modal currently holds — drives Reset and the download filename.
 var modalTemplate = { text: '', file: 'bonus_abuse_email_template.txt' };
 
 function showResponseModal() {
-  modalTemplate = { text: RESPONSE_EMAIL_TEMPLATE, file: 'bonus_abuse_response_email_template.txt' };
-  document.getElementById('emailTemplate').value = RESPONSE_EMAIL_TEMPLATE;
-  document.getElementById('emailModalTitle').textContent = 'Bonus Abuse — Response Email Template';
-  document.getElementById('emailModalSub').innerHTML = 'Final-response reply when a client answers the first notice. Fill in <code>[CLIENT NAME]</code>, <code>[ACCOUNT NUMBER]</code>, <code>[CURRENCY AND AMOUNT]</code> (twice) and <code>[NAME]</code>, then Copy or Download.';
+  var isSwap = (activeKey === 'swap');
+  var tpl = isSwap ? SWAP_RESPONSE_EMAIL_TEMPLATE : RESPONSE_EMAIL_TEMPLATE;
+  modalTemplate = { text: tpl, file: (isSwap ? 'swap' : 'bonus') + '_abuse_response_email_template.txt' };
+  document.getElementById('emailTemplate').value = tpl;
+  if (isSwap) {
+    document.getElementById('emailModalTitle').textContent = 'Swap Abuse — Response Email Template';
+    document.getElementById('emailModalSub').innerHTML = 'Final-response reply when a client answers the first swap-free notice. Fill in <code>[Client Name]</code> and <code>[CURRENCY AND AMOUNT]</code> (twice: profit adjustment, then swaps recovered), then Copy or Download.';
+  } else {
+    document.getElementById('emailModalTitle').textContent = 'Bonus Abuse — Response Email Template';
+    document.getElementById('emailModalSub').innerHTML = 'Final-response reply when a client answers the first notice. Fill in <code>[CLIENT NAME]</code>, <code>[ACCOUNT NUMBER]</code>, <code>[CURRENCY AND AMOUNT]</code> (twice) and <code>[NAME]</code>, then Copy or Download.';
+  }
   document.getElementById('emailModal').classList.add('show');
 }
 
