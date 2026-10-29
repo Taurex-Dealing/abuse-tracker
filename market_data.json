@@ -11,7 +11,7 @@
       "country": "Hong Kong",
       "jira_ticket": "https://zenfinex.atlassian.net/jira/servicedesk/projects/DTS/queues/custom/66/DTS-22042",
       "withdrawals_blocked": "YES",
-      "crm_note": "",
+      "crm_note": "YES",
       "close_only": "",
       "amount_to_deduct": "",
       "email_sent": "",
