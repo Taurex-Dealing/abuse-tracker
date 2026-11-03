@@ -10,7 +10,7 @@
       "account_manager": "",
       "country": "Hong Kong",
       "jira_ticket": "https://zenfinex.atlassian.net/browse/DTS-22098",
-      "withdrawals_blocked": "NO",
+      "withdrawals_blocked": "YES",
       "crm_note": "YES",
       "close_only": "YES",
       "amount_to_deduct": "1378.30",
