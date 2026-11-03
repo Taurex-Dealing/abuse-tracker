@@ -10,7 +10,7 @@
       "account_manager": "",
       "country": "Hong Kong",
       "jira_ticket": "",
-      "withdrawals_blocked": "",
+      "withdrawals_blocked": "NO",
       "crm_note": "NO",
       "close_only": "YES",
       "amount_to_deduct": "",
