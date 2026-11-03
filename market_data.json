@@ -41,26 +41,6 @@
       "jira_pushed": "YES"
     },
     {
-      "id": "1793600208377",
-      "date": "2026-11-02",
-      "cu_number": "513542",
-      "login": "120041401",
-      "name": "Noriah Binti Jamar",
-      "ib": "3627",
-      "account_manager": "Norafiqah Ramli",
-      "country": "Malaysia",
-      "jira_ticket": "https://zenfinex.atlassian.net/browse/DTS-22072",
-      "withdrawals_blocked": "YES",
-      "crm_note": "YES",
-      "close_only": "YES",
-      "amount_to_deduct": "0",
-      "email_sent": "YES",
-      "adjusted": "",
-      "funding_release": "YES",
-      "account_closed": "YES",
-      "jira_pushed": "YES"
-    },
-    {
       "id": "1793599678308",
       "date": "2026-11-02",
       "cu_number": "502035",
@@ -77,7 +57,7 @@
       "email_sent": "YES",
       "adjusted": "",
       "funding_release": "",
-      "account_closed": "",
+      "account_closed": "YES",
       "jira_pushed": "YES"
     },
     {
@@ -318,6 +298,26 @@
       "adjusted": "NO",
       "funding_release": "",
       "account_closed": "",
+      "jira_pushed": "YES"
+    },
+    {
+      "id": "1793600208377",
+      "date": "2026-11-02",
+      "cu_number": "513542",
+      "login": "120041401",
+      "name": "Noriah Binti Jamar",
+      "ib": "3627",
+      "account_manager": "Norafiqah Ramli",
+      "country": "Malaysia",
+      "jira_ticket": "https://zenfinex.atlassian.net/browse/DTS-22072",
+      "withdrawals_blocked": "YES",
+      "crm_note": "YES",
+      "close_only": "YES",
+      "amount_to_deduct": "0",
+      "email_sent": "YES",
+      "adjusted": "",
+      "funding_release": "YES",
+      "account_closed": "YES",
       "jira_pushed": "YES"
     },
     {
