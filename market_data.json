@@ -21,26 +21,6 @@
       "jira_pushed": "YES"
     },
     {
-      "id": "1793685834228",
-      "date": "2026-11-03",
-      "cu_number": "358377",
-      "login": "120040882",
-      "name": "KASEM BOONLAOR",
-      "ib": "2759/CU98016",
-      "account_manager": "",
-      "country": "Thailand",
-      "jira_ticket": "https://zenfinex.atlassian.net/browse/DTS-22090",
-      "withdrawals_blocked": "YES",
-      "crm_note": "YES",
-      "close_only": "YES",
-      "amount_to_deduct": "0",
-      "email_sent": "YES",
-      "adjusted": "NO",
-      "funding_release": "YES",
-      "account_closed": "YES",
-      "jira_pushed": "YES"
-    },
-    {
       "id": "1793686663958",
       "date": "2026-11-03",
       "cu_number": "235142",
@@ -298,6 +278,26 @@
       "adjusted": "NO",
       "funding_release": "",
       "account_closed": "",
+      "jira_pushed": "YES"
+    },
+    {
+      "id": "1793685834228",
+      "date": "2026-11-03",
+      "cu_number": "358377",
+      "login": "120040882",
+      "name": "KASEM BOONLAOR",
+      "ib": "2759/CU98016",
+      "account_manager": "",
+      "country": "Thailand",
+      "jira_ticket": "https://zenfinex.atlassian.net/browse/DTS-22090",
+      "withdrawals_blocked": "YES",
+      "crm_note": "YES",
+      "close_only": "YES",
+      "amount_to_deduct": "0",
+      "email_sent": "YES",
+      "adjusted": "NO",
+      "funding_release": "YES",
+      "account_closed": "YES",
       "jira_pushed": "YES"
     },
     {
