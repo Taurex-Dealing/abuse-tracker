@@ -1,27 +1,6 @@
 {
   "cases": [
     {
-      "id": "1794330726485",
-      "date": "2026-11-10",
-      "cu_number": "502805",
-      "login": "120040454",
-      "name": "NGOC CAT TUONG HUYNH",
-      "ib": "",
-      "account_manager": "Trang Nguyen",
-      "country": "Vietnam",
-      "jira_ticket": "https://zenfinex.atlassian.net/browse/DTS-22180",
-      "withdrawals_blocked": "YES",
-      "crm_note": "YES",
-      "close_only": "YES",
-      "amount_to_deduct": "146.24",
-      "email_sent": "YES",
-      "credit_removed": "YES",
-      "adjusted": "YES",
-      "funding_release": "YES",
-      "account_closed": "YES",
-      "jira_pushed": "YES"
-    },
-    {
       "id": "1791269027780",
       "date": "2026-10-06",
       "cu_number": "504546",
@@ -61,6 +40,27 @@
       "adjusted": "NO",
       "funding_release": "NO",
       "account_closed": "NO",
+      "jira_pushed": "YES"
+    },
+    {
+      "id": "1794330726485",
+      "date": "2026-11-10",
+      "cu_number": "502805",
+      "login": "120040454",
+      "name": "NGOC CAT TUONG HUYNH",
+      "ib": "",
+      "account_manager": "Trang Nguyen",
+      "country": "Vietnam",
+      "jira_ticket": "https://zenfinex.atlassian.net/browse/DTS-22180",
+      "withdrawals_blocked": "YES",
+      "crm_note": "YES",
+      "close_only": "YES",
+      "amount_to_deduct": "146.24",
+      "email_sent": "YES",
+      "credit_removed": "YES",
+      "adjusted": "YES",
+      "funding_release": "YES",
+      "account_closed": "YES",
       "jira_pushed": "YES"
     },
     {
